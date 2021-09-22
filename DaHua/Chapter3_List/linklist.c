@@ -1,15 +1,16 @@
 /*
  * @Description: 《大话数据结构》线性表-链式存储结构-实现接口
  * @Author: Adair Hu
+ * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-20 16:51:13
- * @LastEditTime: 2021-09-20 20:06:53
+ * @LastEditTime: 2021-09-22 10:20:15
  * @FilePath: \DaHua\Chapter3_List\linklist.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
 
+
 #include <stdio.h>
-#include <stdlib.h>
 #include "linklist.h"
 
 

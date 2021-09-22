@@ -1,9 +1,10 @@
 /*
  * @Description: 《大话数据结构》线性表-顺序存储结构（数组）- 实现接口
  * @Author: Adair Hu
+ * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-17 12:23:16
- * @LastEditTime: 2021-09-19 23:34:24
+ * @LastEditTime: 2021-09-20 20:18:37
  * @FilePath: \DaHua\Chapter3_List\sqlist.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
