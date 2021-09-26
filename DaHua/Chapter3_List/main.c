@@ -3,13 +3,12 @@
  * @Author: Adair Hu
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-17 22:34:23
- * @LastEditTime: 2021-09-20 20:09:57
- * @FilePath: \DaHua\Chapter3_List\mian.c
+ * @LastEditTime: 2021-09-26 15:25:37
+ * @FilePath: \DaHua\Chapter3_List\main.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "linklist.h"
 
 void printList(ElemType elem);

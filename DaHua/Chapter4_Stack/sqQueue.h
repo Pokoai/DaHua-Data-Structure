@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-24 17:55:02
- * @LastEditTime: 2021-09-24 21:32:23
+ * @LastEditTime: 2021-09-24 23:06:53
  * @FilePath: \DaHua\Chapter4_Stack\sqQueue.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -56,4 +56,3 @@ bool QueueTraverse(SqQueue Q, void (*func)(ElemType e));
 void ClearQueue(SqQueue * Q);
 
 #endif
-

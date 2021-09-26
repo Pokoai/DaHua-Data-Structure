@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-22 10:46:41
- * @LastEditTime: 2021-09-22 21:31:47
+ * @LastEditTime: 2021-09-25 11:29:55
  * @FilePath: \DaHua\Chapter4_Stack\linkstack.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -20,7 +20,6 @@ typedef struct stackNode{
     ElemType data;
     struct stackNode * next;
 }StackNode;
-
 typedef StackNode * LinkStackPtr; //指向栈节点的指针
 
 typedef struct {
