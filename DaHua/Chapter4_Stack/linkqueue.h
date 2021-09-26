@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-25 10:58:12
- * @LastEditTime: 2021-09-25 17:14:53
+ * @LastEditTime: 2021-09-26 16:08:06
  * @FilePath: \DaHua\Chapter4_Stack\linkqueue.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -32,7 +32,7 @@ typedef struct {            //然后利用节点构建队列的链式结构
 //初空个 增删 取遍清
 
 //初始化
-void InitQueue(LinkQueue * Q);
+bool InitQueue(LinkQueue * Q);
 
 //判空
 bool QueueIsEmpty(LinkQueue Q);
@@ -52,7 +52,10 @@ bool GetHead(LinkQueue Q, ElemType * e);
 //遍历队列，执行 func 函数操作
 void QueueTraverse(LinkQueue Q, void (*func)(ElemType e));
 
-//清空队列
+//清空队列，保留头节点
 void ClearQueue(LinkQueue * Q);
+
+//销毁队列，连头节点也释放掉了
+void DestroyQueue(LinkQueue *Q);
 
 #endif
