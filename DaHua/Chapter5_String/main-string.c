@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-09-27 01:30:50
- * @LastEditTime: 2021-09-27 15:00:07
+ * @LastEditTime: 2021-10-07 01:44:47
  * @FilePath: \DaHua\Chapter5_String\main-string.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -45,7 +45,6 @@ int main(void)
 	}
 
 	i = StrCompare(s1, s2);
-	if(i < 0)
 		s = '<';
 	else if(i == 0)
 		s = '=';
