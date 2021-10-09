@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/adairhu
  * @Date: 2021-10-08 19:55:09
- * @LastEditTime: 2021-10-08 22:38:40
+ * @LastEditTime: 2021-10-09 00:47:19
  * @FilePath: \DaHua\Chapter6_Tree\linkbitree.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -64,6 +64,8 @@ bool CreateBiTree(LinkBiTree * T)
         CreateBiTree(&(*T)->lchild);
         CreateBiTree(&(*T)->rchild);
     }
+
+    return true;
 }
 
 //判空
