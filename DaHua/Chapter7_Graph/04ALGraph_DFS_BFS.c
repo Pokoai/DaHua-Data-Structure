@@ -61,7 +61,7 @@ void BSF(ALGraph G, void (*func)(VertexType v))
     //初始化
     for (int i = 0; i < G.numNodes; i++) {
         visit[i] = false;
-    }
+    } 
     InitQueue(&Q);
 
     for (int i = 0; i < G.numNodes; i++) {
