@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》循环队列-顺序结构-头文件
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-24 17:55:02
- * @LastEditTime: 2021-09-24 23:06:53
+ * @LastEditTime: 2021-10-14 18:36:11
  * @FilePath: \DaHua\Chapter4_Stack\sqQueue.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

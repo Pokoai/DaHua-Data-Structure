@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》- 线索二叉树
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-10-09 00:33:51
- * @LastEditTime: 2021-10-09 02:11:44
+ * @LastEditTime: 2021-10-14 18:37:19
  * @FilePath: \DaHua\Chapter6_Tree\threadbitree.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

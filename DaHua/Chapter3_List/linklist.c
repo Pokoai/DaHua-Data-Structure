@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》线性表-链式存储结构-实现接口
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-20 16:51:13
- * @LastEditTime: 2021-10-08 22:30:20
+ * @LastEditTime: 2021-10-14 18:33:38
  * @FilePath: \DaHua\Chapter3_List\linklist.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

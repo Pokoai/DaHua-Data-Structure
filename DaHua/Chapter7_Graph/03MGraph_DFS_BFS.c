@@ -2,7 +2,7 @@
  * @Description: 《大话数据结构》邻接矩阵的深度优先-广度优先算法
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-10-12 17:20:15
  * @FilePath: \DaHua\Chapter7_Graph\03MGraph_DFS_BFS.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』

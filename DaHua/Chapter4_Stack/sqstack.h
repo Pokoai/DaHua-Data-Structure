@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》栈-顺序(数组)实现
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-21 00:27:04
- * @LastEditTime: 2021-09-22 10:43:42
+ * @LastEditTime: 2021-10-14 18:36:20
  * @FilePath: \DaHua\Chapter4_Stack\sqstack.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

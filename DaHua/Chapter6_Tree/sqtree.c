@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-28 14:36:05
- * @LastEditTime: 2021-10-08 23:18:05
+ * @LastEditTime: 2021-10-14 18:37:05
  * @FilePath: \DaHua\Chapter6_Tree\sqtree.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

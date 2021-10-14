@@ -2,7 +2,7 @@
  * @Description: 《大话数据结构》最小生成树的Prim算法
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-10-13 09:59:11
  * @FilePath: \DaHua\Chapter7_Graph\05MiniSpanTree_Prim.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』

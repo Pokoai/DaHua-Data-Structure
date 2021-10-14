@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》栈-链式实现
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-22 10:46:41
- * @LastEditTime: 2021-09-25 11:29:55
+ * @LastEditTime: 2021-10-14 18:35:46
  * @FilePath: \DaHua\Chapter4_Stack\linkstack.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

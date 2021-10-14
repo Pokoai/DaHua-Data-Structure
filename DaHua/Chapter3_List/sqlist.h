@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》线性表-顺序存储结构（数组）-头文件（接口）
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-17 12:26:50
- * @LastEditTime: 2021-09-22 10:19:54
+ * @LastEditTime: 2021-10-14 18:34:16
  * @FilePath: \DaHua\Chapter3_List\sqlist.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

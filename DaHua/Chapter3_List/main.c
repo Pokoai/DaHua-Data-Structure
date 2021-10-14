@@ -1,9 +1,9 @@
 /*
  * @Description: 《大话数据结构》
  * @Author: Adair Hu
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-17 22:34:23
- * @LastEditTime: 2021-09-26 15:25:37
+ * @LastEditTime: 2021-10-14 18:34:02
  * @FilePath: \DaHua\Chapter3_List\main.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

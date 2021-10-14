@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》-图-邻接表结构实现（无向网）
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-10-09 21:13:48
- * @LastEditTime: 2021-10-12 07:03:50
+ * @LastEditTime: 2021-10-14 18:37:39
  * @FilePath: \DaHua\Chapter7_Graph\02CreateALGraph.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */

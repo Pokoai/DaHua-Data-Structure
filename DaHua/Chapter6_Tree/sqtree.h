@@ -2,9 +2,9 @@
  * @Description: 《大话数据结构》二叉树-顺序存储结构
  * @Author: Adair Hu
  * @WebSite: https://arctee.cn
- * @Github: https://github.com/adairhu
+ * @Github: https://github.com/pokoai
  * @Date: 2021-09-28 14:35:56
- * @LastEditTime: 2021-10-08 20:16:19
+ * @LastEditTime: 2021-10-14 18:37:10
  * @FilePath: \DaHua\Chapter6_Tree\sqtree.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
