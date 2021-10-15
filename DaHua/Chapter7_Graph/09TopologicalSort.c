@@ -49,7 +49,7 @@ typedef struct {
 
 
 //拓扑排序
-void TopologicalSort(ALGraph G)
+bool TopologicalSort(ALGraph G)
 {
     int * stack; //构造一个栈，存储入度为0的顶点下标，以免每次遍历查询
     int top = 0; //栈顶指针，从数组下标为1处开始存储
