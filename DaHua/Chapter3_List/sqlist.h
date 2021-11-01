@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-17 12:26:50
- * @LastEditTime: 2021-10-14 18:34:16
+ * @LastEditTime: 2021-10-31 20:56:09
  * @FilePath: \DaHua\Chapter3_List\sqlist.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -28,7 +28,10 @@ typedef struct {
 
 
 // 1、初始化
-void InitList(SqList * list);
+void InitList(SqList * list)
+{
+    
+}
 
 // 2、判断是否空
 bool ListIsEmpty(SqList list);

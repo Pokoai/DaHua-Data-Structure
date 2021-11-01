@@ -4,8 +4,8 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-25 10:58:12
- * @LastEditTime: 2021-10-14 18:35:36
- * @FilePath: \DaHua\Chapter4_Stack\linkqueue.h
+ * @LastEditTime: 2021-11-01 18:45:17
+ * @FilePath: \DaHua\Chapter4_2_Queue\linkqueue.h
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
 
@@ -25,7 +25,7 @@ typedef struct queueNode {   //首先构建节点模型
 typedef struct {            //然后利用节点构建队列的链式结构
     LinkQueuePtr front;
     LinkQueuePtr rear;
-    int length;
+    int length;  //这里不应该加length变量，因为链栈设置了头结点，那么可以用头结点的data域来存储长度
 }LinkQueue;
 
 

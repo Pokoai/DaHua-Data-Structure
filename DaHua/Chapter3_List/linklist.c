@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-20 16:51:13
- * @LastEditTime: 2021-10-14 18:33:38
+ * @LastEditTime: 2021-11-01 16:23:45
  * @FilePath: \DaHua\Chapter3_List\linklist.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linklist.h"
-
 
 // 1、初始化
 bool InitList(LinkList * list)
@@ -223,4 +222,5 @@ void ClearList(LinkList * list)
         pnode = psave;
     }
     (*list)->next = NULL; //将头节点的指针置为NULL
+    //因为头结点一直存在并未释放，所以头结点的指针要手动置为NULL
 }

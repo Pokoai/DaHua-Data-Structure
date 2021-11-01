@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-26 20:19:47
- * @LastEditTime: 2021-10-14 18:36:32
+ * @LastEditTime: 2021-11-02 04:34:33
  * @FilePath: \DaHua\Chapter5_String\stringself.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -99,6 +99,119 @@ bool StrDelete(String S, int pos, int len)
     return true;
 }
 
+
+//由串S复制得到串T
+bool StrCopy(String T, String S)
+{
+    int slen = StrLength(S);
+    // int tlen = StrLength(T);
+
+    // //S长度大于T的异常处理
+    // if (slen > tlen)
+    //     return false;
+
+    for (int i = 1; i <= slen; i++) {
+        T[i] = S[i];
+        //printf("%d ", i);
+    }
+
+    T[0] = slen;
+
+    return true;
+}
+
+
+//用T返回S1和S2联接而成的新串。若未截断，则返回TRUE，否则FALSE
+bool Concat(String T, String S1, String S2)
+{
+    int slen1 = StrLength(S1);
+    int slen2 = StrLength(S2);
+
+    //先清空T
+    //ClearString(T);
+
+    StrCopy(T, S1);
+    StrInsert(T, slen1 + 1, S2);
+
+    T[0] = slen1 + slen2;
+    
+    //异常处理
+    if (slen1 + slen2 > MAXSIZE)    
+        return false;
+    else 
+        return true;
+}
+
+
+//比较s和T
+//若S>T,则返回值>0;若S=T,则返回值=0;若S<T,则返回值<0
+int StrCompare(String S, String T)
+{
+    int slen = StrLength(S);
+    int tlen = StrLength(T);
+    int max;
+
+    // max = slen >= tlen ? slen : tlen;
+    // for (int i = 1; i <= max; i++) {
+    //     if (S[i] == T[i]) //多余的
+    //         continue;
+    //     else if (S[i] > T[i])
+    //         return 1;
+    //     else 
+    //         return -1;
+    // } 以上代码存在问题，长度短的串后面的值未知，不应该参与比较
+
+    for (int i = 1; i <= slen && i <= tlen; i++) {
+        if (S[i] != T[i])
+            return S[i] - T[i];
+    }
+
+    return (slen - tlen);
+}
+
+
+//用Sub返回串S的第pos个字符起长度为len的子串
+bool SubString(String Sub, String S, int pos, int len)
+{
+    int slen = StrLength(S);
+
+    //异常处理
+    if (pos < 1 || pos > slen)
+        return false;
+    if (pos + len > slen)
+        return false;
+    
+    for (int i = pos; i <= pos + len; i++)
+        Sub[i - pos + 1] = S[i];
+    Sub[0] = len;
+
+    return true;
+}
+
+
+/* 返回子串T在主串S中第pos个字符之后的位置。若不存在,则函数返回值为0。 */
+/* 其中,T非空,1≤pos≤StrLength(S)。 */
+int Index(String S, String T, int pos)
+{
+    int slen = StrLength(S);
+    int tlen = StrLength(T);
+
+    String sub;
+
+    //pos异常处理
+    if (pos < 1 || pos > slen) 
+        return false;
+
+    for (int i = pos; i <= slen - tlen + 1; i++) {
+        SubString(sub, S, i, tlen);
+        if (!StrCompare(sub, T))
+            return i;
+    }
+
+    return 0;
+}
+
+
 //初始条件: 串S,T和V存在,T是非空串（此函数与串的存储结构无关） 
 //操作结果: 用V替换主串S中出现的所有与T相等的不重叠的子串 
 bool Replace(String S, String T, String V)
@@ -129,112 +242,6 @@ bool Replace(String S, String T, String V)
     return true;
 }
 
-/* 返回子串T在主串S中第pos个字符之后的位置。若不存在,则函数返回值为0。 */
-/* 其中,T非空,1≤pos≤StrLength(S)。 */
-int Index(String S, String T, int pos)
-{
-    int slen = StrLength(S);
-    int tlen = StrLength(T);
-
-    String sub;
-
-    //pos异常处理
-    if (pos < 1 || pos > slen) 
-        return false;
-
-    for (int i = pos; i <= slen - tlen + 1; i++) {
-        SubString(sub, S, i, tlen);
-        if (!StrCompare(sub, T))
-            return i;
-    }
-
-    return 0;
-}
-
-//由串S复制得到串T
-bool StrCopy(String T, String S)
-{
-    int slen = StrLength(S);
-    // int tlen = StrLength(T);
-
-    // //S长度大于T的异常处理
-    // if (slen > tlen)
-    //     return false;
-
-    for (int i = 1; i <= slen; i++) {
-        T[i] = S[i];
-        //printf("%d ", i);
-    }
-
-    T[0] = slen;
-
-    return true;
-}
-
-//比较s和T
-//若S>T,则返回值>0;若S=T,则返回值=0;若S<T,则返回值<0
-int StrCompare(String S, String T)
-{
-    int slen = StrLength(S);
-    int tlen = StrLength(T);
-    int max;
-
-    // max = slen >= tlen ? slen : tlen;
-    // for (int i = 1; i <= max; i++) {
-    //     if (S[i] == T[i]) //多余的
-    //         continue;
-    //     else if (S[i] > T[i])
-    //         return 1;
-    //     else 
-    //         return -1;
-    // } 以上代码存在问题，长度短的串后面的值未知，不应该参与比较
-
-    for (int i = 1; i <= slen && i <= tlen; i++) {
-        if (S[i] != T[i])
-            return S[i] - T[i];
-    }
-
-    return (slen - tlen);
-}
-
-//用T返回S1和S2联接而成的新串。若未截断，则返回TRUE，否则FALSE
-bool Concat(String T, String S1, String S2)
-{
-    int slen1 = StrLength(S1);
-    int slen2 = StrLength(S2);
-
-    //先清空T
-    //ClearString(T);
-
-    StrCopy(T, S1);
-    StrInsert(T, slen1 + 1, S2);
-
-    T[0] = slen1 + slen2;
-    
-    //异常处理
-    if (slen1 + slen2 > MAXSIZE)    
-        return false;
-    else 
-        return true;
-}
-
-//用Sub返回串S的第pos个字符起长度为len的子串
-bool SubString(String Sub, String S, int pos, int len)
-{
-    int slen = StrLength(S);
-
-    //异常处理
-    if (pos < 1 || pos > slen)
-        return false;
-    if (pos + len > slen)
-        return false;
-    
-    for (int i = pos; i <= pos + len; i++)
-        Sub[i - pos + 1] = S[i];
-    Sub[0] = len;
-
-    return true;
-}
 
 void ClearString(String S)
 {

@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-22 10:46:04
- * @LastEditTime: 2021-11-01 16:21:38
+ * @LastEditTime: 2021-10-14 18:35:41
  * @FilePath: \DaHua\Chapter4_Stack\linkstack.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -15,14 +15,6 @@
 
 
 //初
-/*
-这里要说明下，1 链表的头指针作为了栈顶指针，那么链表的头结点也不需要了
-所以初始化时不需要取分配空间
-之所以第三章节的链表初始化时要分配空间，是因为后续的步骤不会去给头结点分配空间，
-是从第一节点直接开始的，那么初始化时就要先给头结点分配个空间
-2 链栈结构里放了一个count变量来存储栈结点数量，也是因为没有头结点的原因，像是链表结构
-就不需要这样，可以直接在头结点的data域存储结点数量
-*/
 void InitStack(LinkStack * s)
 {
     s->top = NULL;

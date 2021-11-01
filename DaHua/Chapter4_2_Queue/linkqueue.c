@@ -4,8 +4,8 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-09-25 10:58:45
- * @LastEditTime: 2021-10-14 18:38:15
- * @FilePath: \DaHua\Chapter4_Stack\linkqueue.c
+ * @LastEditTime: 2021-11-01 18:57:47
+ * @FilePath: \DaHua\Chapter4_2_Queue\linkqueue.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
 
@@ -19,12 +19,12 @@ bool InitQueue(LinkQueue * Q)
     //因为此链式结构中需要一个头节点
     //所以初始化时就要分配一个内存空间
     //如果不要头节点的话就不用这一步了
-    Q->front = (LinkQueuePtr)malloc(sizeof(QueueNode)); //创建一个头节点
+    Q->front = (LinkQueuePtr)malloc(sizeof(QueueNode)); //创建一个头节点,头结点的指针即Q->front
     if (Q->front == NULL)
         return false;
-
+    
+    //初始化: 1.首尾指针均指向头结点， 2.头结点指向null 3.长度置为0
     Q->rear = Q->front;
-    //初始化
     Q->front->next = NULL;  //注意：这里的初始化是针对头节点的next的，而非头节点本身
     Q->length = 0;
 
