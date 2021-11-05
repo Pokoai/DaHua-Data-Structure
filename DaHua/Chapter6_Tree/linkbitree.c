@@ -4,7 +4,7 @@
  * @WebSite: https://arctee.cn
  * @Github: https://github.com/pokoai
  * @Date: 2021-10-08 19:55:09
- * @LastEditTime: 2021-10-14 18:36:48
+ * @LastEditTime: 2021-11-02 10:32:44
  * @FilePath: \DaHua\Chapter6_Tree\linkbitree.c
  * 『戒急戒躁，心装大盘。日日耕耘，精进成长。』
  */
@@ -111,7 +111,7 @@ ElemType Root(LinkBiTree T)
         return T->data;
 }
 
-//返回节点位置为p的值 p(层，序号)
+//p指向T中某个结点
 ElemType Value(LinkBiTree p)
 {
     return p->data;
