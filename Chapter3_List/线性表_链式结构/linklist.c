@@ -16,12 +16,13 @@
 // 1、初始化
 bool InitList(LinkList * list)
 {
+    // 有个哑节点，便于删除操作
     *list = (LinkList)malloc(sizeof(Node)); //为头节点分配内存，头指针 *list指向分配的节点
     //分配失败异常处理
-    if (*list == NULL)
+    if (*list == NULL) 
         return false;
     //初始化
-    (*list)->next = NULL;
+    (*list)->next = NULL;  
 
     return true;
 }

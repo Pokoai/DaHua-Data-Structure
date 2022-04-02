@@ -16,11 +16,13 @@
 #include <stdbool.h>
 
 typedef int ElemType;
+
 //定义链式数据结构的节点
 typedef struct node {
     ElemType data;
     struct node * next;
 }Node;
+
 typedef Node * LinkList; //定义结点指针
 
 //初空个 增删改查 取遍清
