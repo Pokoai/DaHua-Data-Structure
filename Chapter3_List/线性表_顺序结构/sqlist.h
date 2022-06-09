@@ -28,10 +28,7 @@ typedef struct {
 
 
 // 1、初始化
-void InitList(SqList * list)
-{
-    
-}
+void InitList(SqList * list);
 
 // 2、判断是否空
 bool ListIsEmpty(SqList list);

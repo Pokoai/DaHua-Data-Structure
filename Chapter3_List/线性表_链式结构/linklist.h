@@ -23,7 +23,7 @@ typedef struct node {
     struct node * next;
 }Node;
 
-typedef Node * LinkList; //定义结点指针
+typedef Node * LinkList; //定义结点指针-即链表
 
 //初空个 增删改查 取遍清
 
