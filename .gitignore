@@ -1,6 +1,8 @@
 ### 自定义 ###
 demo.c
 demo.h
+./demo
+test.c
 
 ### C ###
 # Prerequisites
