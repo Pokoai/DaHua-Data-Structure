@@ -3,7 +3,7 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/pokoai
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
  * Date: 2022-08-10
  */
 
@@ -15,11 +15,11 @@
 #define MAXSIZE 100  // 数组最大容量
 
 // 泛型
-typedef int TYPE;
+typedef int ElemType;
 
 // 定义数组的结构类型
 typedef struct arr {
-    TYPE * pBase;  // 数组首元素的地址
+    ElemType * pBase;  // 数组首元素的地址
     int len;  // 数组容量
     int cnt;  // 数组当前元素个数
 } ARRAY;
@@ -27,12 +27,12 @@ typedef struct arr {
 
 void initArray(ARRAY * pArr, int length);
 bool arrayIsFull(ARRAY * pArr);
-bool appendArray(ARRAY * pArr, TYPE elem);
+bool appendArray(ARRAY * pArr, ElemType elem);
 bool arrayIsEmpty(ARRAY * pArr);
 void showArray(ARRAY * pArr);
 int lengthArray(ARRAY * pArr);
-bool insertArray(ARRAY * pArr, int pos, TYPE elem);
-bool deleteArray(ARRAY * pArr, int pos, TYPE * pElem);
+bool insertArray(ARRAY * pArr, int pos, ElemType elem);
+bool deleteArray(ARRAY * pArr, int pos, ElemType * pElem);
 void inverseArray(ARRAY * pArr);
 
 int main(void)
@@ -56,7 +56,7 @@ int main(void)
     showArray(&arr);
 
     printf("删除元素：\n");
-    TYPE elem;
+    ElemType elem;
     deleteArray(&arr, 3, &elem);
     showArray(&arr);
     deleteArray(&arr, 3, &elem);
@@ -73,7 +73,7 @@ int main(void)
 // 初始化数组
 void initArray(ARRAY * pArr, int length)
 {
-    pArr->pBase = (TYPE *)malloc(sizeof(TYPE) * length);  // 为数组分配内存空间
+    pArr->pBase = (ElemType *)malloc(sizeof(ElemType) * length);  // 为数组分配内存空间
     if ( NULL == pArr->pBase ) {
         printf("数组内存分配失败！\n");
         exit(-1);  // 终止整个程序
@@ -84,7 +84,7 @@ void initArray(ARRAY * pArr, int length)
 }
 
 // 增添元素
-bool appendArray(ARRAY * pArr, TYPE elem)
+bool appendArray(ARRAY * pArr, ElemType elem)
 {
     // 数组是否已满
     if ( arrayIsFull(pArr) ) {
@@ -132,7 +132,7 @@ int lengthArray(ARRAY * pArr)
 
 // 插入元素
 // pos：从 1 开始
-bool insertArray(ARRAY * pArr, int pos, TYPE elem)
+bool insertArray(ARRAY * pArr, int pos, ElemType elem)
 {
     if ( arrayIsFull(pArr) ) {
         printf("数组已满，无法插入！\n");
@@ -167,7 +167,7 @@ bool insertArray(ARRAY * pArr, int pos, TYPE elem)
 }
 
 // 删除元素
-bool deleteArray(ARRAY * pArr, int pos, TYPE * pElem)
+bool deleteArray(ARRAY * pArr, int pos, ElemType * pElem)
 {
     if ( arrayIsEmpty(pArr) ) {
         printf("数组为空，删除失败！\n");
@@ -190,7 +190,7 @@ bool deleteArray(ARRAY * pArr, int pos, TYPE * pElem)
 // 倒置数组
 void inverseArray(ARRAY * pArr)
 {
-    TYPE temp;
+    ElemType temp;
     
     for ( int i = 0; i < pArr->cnt / 2; i++ ) {
         temp = pArr->pBase[i];
