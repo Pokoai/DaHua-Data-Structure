@@ -52,7 +52,7 @@ int main(void)
     printf("链表长度：%d\n", len);
 
     printf("---插入元素---\n");
-    insertList(pHead, 1, 555);
+    insertList(pHead, 0, 555);
     traverseList(pHead);
 
     len = lengthList(pHead);
@@ -60,7 +60,7 @@ int main(void)
 
     printf("---删除元素---\n");
     ElemType e;
-    deleteList(pHead, 2, &e);
+    deleteList(pHead, 0, &e);
     traverseList(pHead);
 
     printf("---排序---\n");
@@ -75,7 +75,7 @@ PNODE createList()
     int len;
     int val;  
 
-    // 首先创建一个头节点
+    // 首先创建一个头指针
     PNODE pHead = (PNODE)malloc(sizeof(NODE));  
     if ( NULL == pHead ) {
         printf("头节点内存分配失败，程序终止！");
@@ -156,7 +156,22 @@ int lengthList(PNODE pHead)
 bool insertList(PNODE pHead, int pos, ElemType elem)
 {
     // 异常处理
-    if ( pos > 1 + lengthList(pHead) ) {
+    // if ( pos > 1 + lengthList(pHead) ) {
+    //     printf("插入位置超过有效范围!\n");
+    //     return false;
+    // }
+    
+    // lengthList(pHead)要遍历链表，后面代码 while ( i++ < pos-1 ) { p = p->pNext; }也遍历链表，相当于遍历了两次，故效率低下
+    // 优化：将两者结合起来，while( (i++ < pos-1) && p != NULL ) { p = p->pNext; }
+
+    PNODE p = pHead;
+    int i = 0;
+
+    while ( (i++ < pos-1) && p != NULL ) {
+        p = p->pNext;
+    }
+
+    if ( (i > pos-1) || NULL == p ) {  // NULL==p: pos>n+1; i>pos-1: pos<1
         printf("插入位置超过有效范围!\n");
         return false;
     }
@@ -170,11 +185,11 @@ bool insertList(PNODE pHead, int pos, ElemType elem)
     pNew->data = elem;
 
     // 定位到pos位置的前驱节点，p指向该前驱节点
-    PNODE p = pHead;  
-    int i = 0;
-    while ( i++ < pos-1 ) {
-        p = p->pNext;
-    }
+    // PNODE p = pHead;  
+    // int i = 0;
+    // while ( i++ < pos-1 ) {
+    //     p = p->pNext;
+    // }
 
     PNODE q = p->pNext;  // q指向pos位置的节点
     pNew->pNext = q;   // 先将新节点后端与pos节点连起来
@@ -193,16 +208,28 @@ bool deleteList(PNODE pHead, int pos, ElemType * elem)
         printf("链表为空！");
         return false;
     }
-    if ( pos > lengthList(pHead) ) {
-        printf("pos超出有效范围！");
-        return false;
-    }
+    // if ( pos > lengthList(pHead) ) {
+    //     printf("pos超出有效范围！");
+    //     return false;
+    // } 
 
     // 定位到pos位置的前驱节点，p指向该前驱节点
+    // PNODE p = pHead;
+    // int i = 0;
+    // while ( i++ < pos-1 ) {
+    //     p = p->pNext;
+    // }
+
     PNODE p = pHead;
     int i = 0;
-    while ( i++ < pos-1 ) {
+
+    while ( (i++ < pos-1) && p != NULL ) {
         p = p->pNext;
+    }
+
+    if ( (i > pos-1) || NULL == p ) {
+        printf("删除位置超过有效范围!\n");
+        return false;
     }
 
     // 删除pos位置节点
