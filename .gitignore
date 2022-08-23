@@ -1,7 +1,5 @@
 ### 自定义 ###
-demo.c
-demo.h
-./demo
+demo/*
 test.c
 
 ### C ###
