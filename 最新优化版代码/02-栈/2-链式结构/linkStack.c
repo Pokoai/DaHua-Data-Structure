@@ -21,8 +21,8 @@ typedef struct node {
 
 // 定义栈的数据类型
 typedef struct linkstack {
-    pNode pTop;     // 栈顶指针
-    pNode pBottom;  // 栈底指针
+    pNode pTop;     // 栈顶指针，指向栈顶元素
+    pNode pBottom;  // 栈底指针，保持不动，指向头节点(无效数据)
 } LinkStack, *pLinkStack;
 
 
