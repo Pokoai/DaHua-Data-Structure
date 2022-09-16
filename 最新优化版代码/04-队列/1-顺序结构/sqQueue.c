@@ -1,9 +1,9 @@
 /*
- * 功能: 循环队列
+ * 功能: 循环队列-顺序结构
  * 作者: Guyue
- * 微信公众号: httpQ://img.arctee.cn/one/pokeai-wechat.png
- * 网站：httpQ://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
+ * 网站：https://pokeai.cn
+ * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
  * Date: 2022-08-26
  */
 
@@ -34,7 +34,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAXSIZE 7  // 队列长度
+#define MAXSIZE 10  // 队列长度
 
 typedef int ElemType;
 
@@ -42,50 +42,50 @@ typedef struct queue {
     ElemType * pBase;  // 数组（用指针表示）
     int front;
     int rear;
-} QUEUE, *PQUEUE;
+} Queue, *pQueue;
 
 
-void initQueue(PQUEUE pQ);
-bool isFull(PQUEUE pQ);
-bool enQueue(PQUEUE pQ, ElemType e);
-bool isEmpty(PQUEUE pQ);
-bool traverse(PQUEUE pQ);
-bool deQueue(PQUEUE pQ, ElemType * pE);
+void InitQueue(pQueue pQ);
+bool IsFull(pQueue pQ);
+bool EnQueue(pQueue pQ, ElemType e);
+bool IsEmpty(pQueue pQ);
+bool TraverQe(pQueue pQ);
+bool DeQueue(pQueue pQ, ElemType * pE);
 
 
 int main(void)
 {
-    QUEUE S;
+    Queue Q;
 
-    initQueue(&S);
+    InitQueue(&Q);
 
     printf("入队：");
-    enQueue(&S, 1);
-    enQueue(&S, 2);
-    enQueue(&S, 3);
-    enQueue(&S, 4);
-    enQueue(&S, 5);
-    enQueue(&S, 6);
-    // enQueue(&S, 7);
+    EnQueue(&Q, 1);
+    EnQueue(&Q, 2);
+    EnQueue(&Q, 3);
+    EnQueue(&Q, 4);
+    EnQueue(&Q, 5);
+    EnQueue(&Q, 6);
+    // EnQueue(&Q, 7);
 
-    traverse(&S);
+    TraverQe(&Q);
 
     ElemType e;
-    deQueue(&S, &e);
+    DeQueue(&Q, &e);
     printf("出队：%d\n", e);
-    deQueue(&S, &e);
+    DeQueue(&Q, &e);
     printf("出队：%d\n", e);
-    deQueue(&S, &e);
+    DeQueue(&Q, &e);
     printf("出队：%d\n", e);
 
-    traverse(&S);
+    TraverQe(&Q);
 
     return 0;
 
 }
 
 // 初始化
-void initQueue(PQUEUE pQ)
+void InitQueue(pQueue pQ)
 {
     // 创建动态数组
     pQ->pBase = (ElemType*)malloc( MAXSIZE * sizeof(ElemType) );
@@ -94,15 +94,15 @@ void initQueue(PQUEUE pQ)
 }
 
 // 是否已满
-bool isFull(PQUEUE pQ)
+bool IsFull(pQueue pQ)
 {
     return ( (pQ->rear+1) % MAXSIZE ==  pQ->front );
 }
 
 // 入队
-bool enQueue(PQUEUE pQ, ElemType e)
+bool EnQueue(pQueue pQ, ElemType e)
 {
-    if ( isFull(pQ) ) {
+    if ( IsFull(pQ) ) {
         printf("队列已满！无法入队！");
         return false;
     }
@@ -114,15 +114,15 @@ bool enQueue(PQUEUE pQ, ElemType e)
 }
 
 // 是否空
-bool isEmpty(PQUEUE pQ)
+bool IsEmpty(pQueue pQ)
 {
     return ( pQ->front == pQ->rear );
 }
 
 // 遍历队列
-bool traverse(PQUEUE pQ)
+bool TraverQe(pQueue pQ)
 {
-    if ( isEmpty(pQ) ) {
+    if ( IsEmpty(pQ) ) {
         printf("队列为空！");
         return false;
     }
@@ -138,9 +138,9 @@ bool traverse(PQUEUE pQ)
 }
 
 // 出队
-bool deQueue(PQUEUE pQ, ElemType * pE)
+bool DeQueue(pQueue pQ, ElemType * pE)
 {
-    if ( isEmpty(pQ) ) {
+    if ( IsEmpty(pQ) ) {
         printf("队列为空！");
         return false;
     }
@@ -150,3 +150,7 @@ bool deQueue(PQUEUE pQ, ElemType * pE)
 
     return true;
 }
+
+// 清空
+
+// 销毁

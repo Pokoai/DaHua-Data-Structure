@@ -25,6 +25,8 @@ typedef struct linkstack {
     pNode pBottom;  // 栈底指针，保持不动，指向头节点(无效数据)
 } LinkStack, *pLinkStack;
 
+// 链栈示意图：https://img.arctee.cn/one/202209162331521.png
+
 
 void InitStack(pLinkStack S);
 bool PushStack(pLinkStack S, ElemType elem);

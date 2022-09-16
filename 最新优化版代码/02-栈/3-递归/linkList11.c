@@ -1,5 +1,5 @@
 /*
- * 功能: 单链表-线性表的链式结构
+ * 功能: 单链表-遍历链表用递归实现
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
@@ -21,12 +21,13 @@ typedef struct node {
 
 typedef pNode LinkList;  // 有了头指针，就有了整个链表，即头指针代表一个链表
 
-// 链表图示：https://img.arctee.cn/one/202209162309895.png
-
 
 void InitList(LinkList * pL);
 bool InsertList(LinkList L, int position, ElemType elem);
-void TraverseList(LinkList L, void (* func)(ElemType elem) );
+
+// void TraverseList(LinkList L, void (* func)(ElemType elem) );
+void Traverse(LinkList L);  // 递归实现遍历
+
 void print(ElemType elem);
 bool DeleteList(LinkList L, int position, ElemType * pElem);
 int LengthList(LinkList L);
@@ -45,16 +46,22 @@ int main(void)
     InsertList(L, 3, 3);
     InsertList(L, 4, 4);
     InsertList(L, 5, 5);
-    TraverseList(L, print);
+    // TraverseList(L, print);
+    Traverse(L);
+    printf("\n");
 
     // InsertList(L, 7, 5);
     InsertList(L, 1, 10);
-    TraverseList(L, print);
+    // TraverseList(L, print);
+    Traverse(L);
+    printf("\n");
 
     ElemType e;
     // DeleteList(L, 0, &e);
     DeleteList(L, 1, &e);
-    TraverseList(L, print);
+    // TraverseList(L, print);
+    Traverse(L);
+    printf("\n");
     // DeleteList(L, 6, &e);
 
     printf("链表长度：%d\n", LengthList(L));
@@ -131,6 +138,30 @@ void TraverseList(LinkList L, void (* func)(ElemType elem) )
         p = p->pNext;
     }
     printf("\n");
+}
+
+// 递归实现链表遍历
+void Traverse2(LinkList L)
+{
+    pNode p = L->pNext;  // 指向第一个有效节点
+
+    if ( NULL == p ) {
+        return;
+    } else {
+        printf("%d ", p->data);
+        Traverse(p);  // 递归
+    }
+}
+
+// 递归实现链表遍历（改进）
+void Traverse(LinkList L)
+{
+    pNode p = L->pNext;  // 指向第一个有效节点
+
+    if ( p != NULL ) {
+        printf("%d ", p->data);
+        Traverse(p);
+    }
 }
 
 bool IsEmpty(LinkList L)

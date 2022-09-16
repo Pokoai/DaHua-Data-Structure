@@ -9,6 +9,29 @@
 
 #include <stdio.h>
 
+
+void move(int n, char s1, char s2);
+void hannuota(int n, char A, char B, char C);
+
+
+int main(void)
+{
+    int n;
+    
+    printf("请输入要移动的盘子个数：");
+    scanf("%d", &n);
+
+    hannuota(n, 'A', 'B', 'C');
+
+    return 0;
+}
+
+// 将编号为n的盘子从 s1 柱子移到 s2 柱子
+void move(int n, char s1, char s2)
+{
+     printf("将第%d个盘子由%c移到%c\n", n, s1, s2);
+}
+
 void hannuota(int n, char A, char B, char C)
 {
     /*
@@ -21,22 +44,10 @@ void hannuota(int n, char A, char B, char C)
     */
    
    if ( 1 == n ) {
-        printf("将第%d个盘子由%c移到%c\n", n, A, C);
+        move(n, A, C);
    } else {
         hannuota(n-1, A, C, B);
-        printf("将第%d个盘子由%c移到%c\n", n, A, C);
+        move(n, A, C);
         hannuota(n-1, B, A, C);
    }
-}
-
-int main(void)
-{
-    int n;
-    
-    printf("请输入要移动的盘子个数：");
-    scanf("%d", &n);
-
-    hannuota(n, 'A', 'B', 'C');
-
-    return 0;
 }
