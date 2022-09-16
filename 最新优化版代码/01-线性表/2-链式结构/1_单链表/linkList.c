@@ -43,15 +43,17 @@ int main(void)
     InsertList(L, 3, 3);
     InsertList(L, 4, 4);
     InsertList(L, 5, 5);
-    InsertList(L, 7, 5);
+    TraverseList(L, print);
+
+    // InsertList(L, 7, 5);
     InsertList(L, 1, 10);
     TraverseList(L, print);
 
     ElemType e;
-    DeleteList(L, 0, &e);
+    // DeleteList(L, 0, &e);
     DeleteList(L, 1, &e);
     TraverseList(L, print);
-    DeleteList(L, 6, &e);
+    // DeleteList(L, 6, &e);
 
     printf("链表长度：%d\n", LengthList(L));
 
