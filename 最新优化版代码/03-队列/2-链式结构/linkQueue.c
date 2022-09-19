@@ -33,6 +33,8 @@ bool EnQueue(pLinkQueue Q, ElemType elem);
 void Traverse(pLinkQueue Q);
 bool IsEmpty(pLinkQueue Q);
 bool DeQueue(pLinkQueue Q, ElemType * pElem);
+void DestoryQueue(pLinkQueue Q);
+void ClearQueue(pLinkQueue Q);
 
 
 
@@ -130,4 +132,27 @@ bool DeQueue(pLinkQueue Q, ElemType * pElem)
     p = NULL;
 
     return true;
+}
+
+// 销毁队列
+void DestoryQueue(pLinkQueue Q)
+{
+    pNode p = Q->pFront;
+
+    while( p != NULL ) {
+        Q = p->pNext;
+        free(p);
+        p = Q;
+    }
+}
+
+// 清空队列
+// 保留头节点
+void ClearQueue(pLinkQueue Q)
+{
+    pNode p = Q->pFront->pNext;
+
+    DestoryQueue(p);
+    Q->pRear = Q->pFront;
+    Q->pFront->pNext = NULL;
 }
