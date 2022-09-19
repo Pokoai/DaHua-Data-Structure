@@ -41,7 +41,7 @@ void Assign(LinkBiTree p, ElemType value);
 //获取根节点的值
 ElemType Root(LinkBiTree p);
 
-//返回节点位置为p的值 p(层，序号)
+//返回节点位置为p的值    p(层，序号)
 ElemType Value(LinkBiTree p);
 
 //清空二叉树
