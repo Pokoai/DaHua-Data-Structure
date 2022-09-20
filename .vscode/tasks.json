@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: gcc.exe 生成活动文件",  // 编译任务的名称，跟 launch.json最后的 preLaunchTask的值对应
+			"command": "C:\\mingw64\\bin\\gcc.exe",  // 编译器的路径，须跟你自己的电脑相符
+			"args": [  // 编译器执行时的参数，跟手动编译时输入的内容基本一致，主要是多了-g参数，以加入调试信息
+				"-g",
+				//"${file}",
+				//"${fileDirname}\\sqtree.c",  // 编译特定文件
+				"${fileDirname}\\*.c",         // 编译文件夹下所有 .cpp 文件
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+				//"cwd": "F:\\ingw64\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "编译器: F:\\mingw64\\bin\\gcc.exe"
+		}
+	]
+}
