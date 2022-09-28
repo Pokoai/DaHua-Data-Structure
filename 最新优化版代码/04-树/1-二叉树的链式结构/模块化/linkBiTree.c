@@ -7,13 +7,16 @@
  * Date: 2022-09-19
  */
 
+
+// 注意：非递归遍历尚未实现
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 #include "linkBiTree.h"
 #include "linkQueue.h"
-
 
 
 // 初始化
@@ -68,6 +71,13 @@ void InOrderTraverse(LinkBiTree T)
         printf("%c ", T->data);
         InOrderTraverse(T->pRChild);
     }
+}
+
+// 中序遍历
+// 非递归算法，利用栈实现
+void InOrderTraverse_stack(LinkBiTree T)
+{
+
 }
 
 // 后序遍历二叉树
@@ -309,10 +319,3 @@ void DestoryBiTree(LinkBiTree T)
         T = NULL;
     }
 }
-
-
-
-
-
-
-
