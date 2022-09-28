@@ -48,7 +48,7 @@ int main(void)
 
     InitBiTree(&T);
 
-    printf("请按前序输入二叉树（如：ab### 表示 a 为根节点，b 为左子树）：\n");  // abdg###e##c#f##
+    printf("请按前序输入二叉树（如：ab###，表示 a 为根节点，b 为左子树）：\n");  // abdg###e##c#f##
     CreatBiTree(&T);
     while ( getchar() != '\n');  // 消除回车字符
 
@@ -221,6 +221,10 @@ void Assign(pBiTNode p, TElemType elem)
 // 找左兄弟
 
 // 找右兄弟
+
+// 销毁
+
+// 清空
 
 
 

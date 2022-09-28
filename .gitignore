@@ -1,6 +1,6 @@
 ### 自定义 ###
-demo
-demo/*
+demo*
+demo*/*
 test.c
 
 ### C ###
