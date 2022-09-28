@@ -24,7 +24,7 @@ bool CreateBiThrTree(BiThrTree * T)
         *T = NULL;
     }
     else {
-        *T = (BiThrTree)malloc(sizeof(biThrNode));
+        *T = (BiThrTree)malloc(sizeof(BiThrNode));
         if (*T == NULL)
             return false;
         (*T)->data = ch;
@@ -39,7 +39,7 @@ bool CreateBiThrTree(BiThrTree * T)
     return true;
 }
 
-//中序遍历进行二叉树线索化
+// 中序遍历进行二叉树线索化
 void InThreading(BiThrTree T) //T指向头结点
 {
     static BiThrTree pre; //pre指向刚刚访问的结点
@@ -63,7 +63,7 @@ void InThreading(BiThrTree T) //T指向头结点
     }
 }
 
-//中序遍历线索二叉树（非递归方法）
+// 中序遍历线索二叉树（非递归方法）
 bool InOrderTraverse_Thr(BiThrTree T, void (*func)(ElemType e))
 {
     /*
