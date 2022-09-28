@@ -60,7 +60,7 @@ bool CreateBiTree(SqBiTree T)
 // 是否为空
 bool BiTreeIsEmpty(SqBiTree T)
 {
-    return (Nil == T[0])
+    return (Nil == T[0]);
 }
 
 // 获取二叉树的深度
