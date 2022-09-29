@@ -67,7 +67,7 @@ typedef struct {
 bool CreateALGraph(ALGraph * G)
 {
     int i, j, w;
-    EdgeNode * e; //
+    EdgeNode * e; 
 
     printf("请输入顶点数和边数(以空格分隔)：");
     scanf("%d%d", &G->numNodes, &G->numEdges);

@@ -35,7 +35,7 @@ void CreateMGraph(MGraph * G)
     int i, j, w;
 
     printf("请输入无向图的顶点数和边数(以空格分隔)：");
-    scanf("%d%d", &G->numNodes, &G->numEdges);
+    scanf("%d %d", &G->numNodes, &G->numEdges);
     //去掉回车键产生的字符
     while(getchar() != '\n')
         continue;
@@ -58,9 +58,9 @@ void CreateMGraph(MGraph * G)
     //构建邻接矩阵
     for (int k = 0; k < G->numEdges; k++) {
         printf("请输入边（vi,vj）的下标i、j以及权值w(以空格分隔)：");
-        scanf("%d%d%d", &i, &j, &w);
+        scanf("%d %d %d", &i, &j, &w);
         G->arc[i][j] = w;
-        G->arc[j][i] = G->arc[i][j];
+        G->arc[j][i] = w;
     }
 
 }
