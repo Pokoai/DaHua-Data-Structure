@@ -11,7 +11,6 @@
 #include <stdlib.h>
 
 #define MAXVEX 100        // 最大顶点数
-#define INFINITY 65535    // 用整数最大值代表无穷大
 
 typedef char VertexType;  // 顶点数据类型
 typedef int EdgeType;     // 边/弧权值数据类型
