@@ -4,7 +4,7 @@
  * 微信公众号: https://img.edgetee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
  * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
- * Date: 2022-09-30
+ * Date: 2022-10-01
  */
 
 #include <stdio.h>
@@ -12,7 +12,10 @@
 
 #define MAXVEX 100        // 最大顶点数
 // #define INFINITY 65535    // 用整数最大值代表无穷大
+
 bool visited[MAXVEX];     // 标记数组
+
+
 
 typedef char VertexType;  // 顶点数据类型
 typedef int EdgeType;     // 边/弧权值数据类型
@@ -25,10 +28,13 @@ typedef struct {
 } AMGraph;
 
 
+
+
 // 函数声明
 void CreateAMGraph(AMGraph *G);
 static void DFS(AMGraph * G, int i);
 void DFS_Traverse(AMGraph *G);
+
 
 
 int main(void)
