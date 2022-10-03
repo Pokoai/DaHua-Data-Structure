@@ -192,16 +192,17 @@ void BFS_Traverse(ALGraph * G)
     for ( int j = 0; j < G->numVex; j++ ) {  // 适用于非连通图
         if ( !visited[j] ) {
             EnQueue(&q, j);  // 第一个顶点下标入队
+            visited[j] = true;
             while ( QueueIsEmpty(&q) ) {
                 DeQueue(&q, &idx);    // 出队
                 printf("%c ", G->adjList[idx].data);  // 访问顶点
-                visited[j] = true;
                 
                 // 出队的同时将其所有未访问邻接点入队
                 EdgeNode *p = G->adjList[idx].firstEdge;
                 while ( p != NULL ) {
                     if ( !visited[p->adjvex] ) {  // 勿忘这一句，筛选出尚未访问的顶点
                         EnQueue(&q, p->adjvex);  
+                        visited[p->adjvex] = true;
                     }
                     p = p->next;
                 }
@@ -209,4 +210,5 @@ void BFS_Traverse(ALGraph * G)
         }
         
     }
+    DestoryQueue(&q);  // 与 InitQueue() 成对出现
 }
