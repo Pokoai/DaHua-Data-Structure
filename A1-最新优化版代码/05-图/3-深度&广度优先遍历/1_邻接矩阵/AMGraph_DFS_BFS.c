@@ -7,14 +7,22 @@
  * Date: 2022-10-01
  */
 
+
+// 深度优先：类似于树的前序遍历
+// 广度优先：类似于树的层序遍历（借助队列实现）
+
+
+
 #include <stdio.h>
 #include <stdbool.h>
+
+#include "linkQueue.h"
+
 
 #define MAXVEX 100        // 最大顶点数
 // #define INFINITY 65535    // 用整数最大值代表无穷大
 
 bool visited[MAXVEX];     // 标记数组
-
 
 
 typedef char VertexType;  // 顶点数据类型
@@ -34,6 +42,7 @@ typedef struct {
 void CreateAMGraph(AMGraph *G);
 static void DFS(AMGraph * G, int i);
 void DFS_Traverse(AMGraph *G);
+void BFS_Traverse(AMGraph *G);
 
 
 
@@ -44,9 +53,14 @@ int main(void)
     CreateAMGraph(&G);
 
     printf("顶点数: %d，边数: %d\n", G.numVex, G.numEdge);
-    printf("边(%c,%c)的权值: %d\n", G.vex[2], G.vex[0], G.edge[2][0]);
+    printf("边(%c,%c)的权值: %d\n", G.vex[4], G.vex[3], G.edge[4][3]);
 
+    printf("深度优先遍历：");
     DFS_Traverse(&G);
+    printf("\n");
+
+    printf("广度优先遍历：");
+    BFS_Traverse(&G);
 
     return 0;
 }
@@ -137,4 +151,70 @@ void DFS_Traverse(AMGraph *G)
             DFS(G, j);
         }
     }
+}
+
+// 邻接矩阵的广度优先遍历
+// void BFS_Traverse(AMGraph *G)
+// {
+//     // 初始化标记数组
+//     for ( int i = 0; i < G->numVex; i++ ) {
+//         visited[i] = false;
+//     }
+
+//     LinkQueue q;
+//     int idx;
+
+//     InitQueue(&q);
+//     for ( int j = 0; j < G->numVex; j++ ) {
+//         if ( !visited[j] ) {
+//             EnQueue(&q, j);
+//             while ( !QueueIsEmpty(&q) ) {
+//                 DeQueue(&q, &idx);
+//                 printf("%c ", G->vex[idx]);
+//                 visited[idx] = true;         // 出队时再标记，错误！应该进队时就要标记！
+
+//                 // 将其所有未访问的邻接点入队
+//                 for ( int k = 0; k < G->numVex; k++ ) {
+//                     if ( G->edge[idx][k] == 1 && !visited[k] ) {
+//                         EnQueue(&q, k);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     DestoryQueue(&q);
+// }
+
+
+// 邻接矩阵的广度优先遍历
+void BFS_Traverse(AMGraph *G)
+{
+    // 初始化标记数组
+    for ( int i = 0; i < G->numVex; i++ ) {
+        visited[i] = false;
+    }
+
+    LinkQueue q;
+    int idx;
+
+    InitQueue(&q);
+    for ( int j = 0; j < G->numVex; j++ ) {
+        if ( !visited[j] ) {
+            EnQueue(&q, j);
+            visited[j] = true;  // 入队时就要马上进行标记
+            while ( !QueueIsEmpty(&q) ) {
+                DeQueue(&q, &idx);
+                printf("%c ", G->vex[idx]);  // 避免后面再写一句 printf，故出队时再访问
+                
+                // 将其所有未访问的邻接点入队
+                for ( int k = 0; k < G->numVex; k++ ) {
+                    if ( G->edge[idx][k] == 1 && !visited[k] ) {
+                        EnQueue(&q, k);
+                        visited[k] = true;  // 入队时就要马上进行标记
+                    }
+                }
+            }
+        }
+    }
+    DestoryQueue(&q);  // 跟 InitQueue() 配套
 }
