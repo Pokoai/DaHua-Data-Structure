@@ -18,7 +18,7 @@
 void InitQueue(pLinkQueue Q)
 {
     // 创建头节点
-    pNode pHead = (pNode)malloc(sizeof(Node));
+    pQNode pHead = (pQNode)malloc(sizeof(QNode));
     if ( NULL == pHead ) {
         printf("内存分配失败！");
         exit(-1);
@@ -30,10 +30,10 @@ void InitQueue(pLinkQueue Q)
 }
 
 // 入队
-bool EnQueue(pLinkQueue Q, ElemType elem)
+bool EnQueue(pLinkQueue Q, QElemType elem)
 {
     // 创建新节点
-    pNode pNew = (pNode)malloc(sizeof(Node));
+    pQNode pNew = (pQNode)malloc(sizeof(QNode));
     if ( NULL == pNew ) {
         printf("内存分配失败，无法入队！");
         return false;
@@ -51,7 +51,7 @@ bool EnQueue(pLinkQueue Q, ElemType elem)
 // 遍历队列
 void Traverse(pLinkQueue Q)
 {
-    pNode p = Q->pFront;  
+    pQNode p = Q->pFront;  
 
     while ( p != Q->pRear ) {
         // 头指针的后驱节点才是第一个有效数据
@@ -62,20 +62,20 @@ void Traverse(pLinkQueue Q)
 }
 
 // 是否为空
-bool IsEmpty(pLinkQueue Q)
+bool QueueIsEmpty(pLinkQueue Q)
 {
     return (Q->pFront == Q->pRear );
 }
 
 // 出队
-bool DeQueue(pLinkQueue Q, ElemType * pElem)
+bool DeQueue(pLinkQueue Q, QElemType * pElem)
 {
-    if ( IsEmpty(Q) ) {
+    if ( QueueIsEmpty(Q) ) {
         printf("队列为空，出队失败！");
         return false;
     }
 
-    pNode p = Q->pFront;
+    pQNode p = Q->pFront;
 
     *pElem = p->pNext->data;
     Q->pFront = p->pNext;  // 将头指针往后移动一位
@@ -89,12 +89,13 @@ bool DeQueue(pLinkQueue Q, ElemType * pElem)
 // 销毁队列
 void DestoryQueue(pLinkQueue Q)
 {
-    pNode p = Q->pFront;
+    pQNode p = Q->pFront;
+
 
     while( p != NULL ) {
-        Q = p->pNext;
+        Q->pFront = p->pNext;
         free(p);
-        p = Q;
+        p = Q->pFront;
     }
 }
 
@@ -102,9 +103,6 @@ void DestoryQueue(pLinkQueue Q)
 // 保留头节点
 void ClearQueue(pLinkQueue Q)
 {
-    pNode p = Q->pFront->pNext;
-
-    DestoryQueue(p);
-    Q->pRear = Q->pFront;
-    Q->pFront->pNext = NULL;
+    DestoryQueue(Q);
+    InitQueue(Q);
 }
