@@ -13,7 +13,7 @@
 #include <stdbool.h>
 
 
-typedef int QElemType;  // 二叉树的节点指针作为队列的元素
+typedef int QElemType;  
 
 // 定义链式节点的数据类型
 typedef struct qNode {
