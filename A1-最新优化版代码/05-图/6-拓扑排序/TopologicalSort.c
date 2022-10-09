@@ -30,7 +30,7 @@ typedef int EdgeType;
 // 边表节点
 typedef struct edgeNode {
     int adjvex;
-    EdgeType weight;
+    // EdgeType weight;  // 拓扑排序，不需要边表节点的权值域weight
     struct edgeNode * next;
 } EdgeNode;
 
@@ -38,7 +38,7 @@ typedef struct edgeNode {
 typedef struct vertex {
     VertexType data;
     EdgeNode * firstedge;
-    int in;  // 入度
+    int in;             // 拓扑排序，顶点表节点增加入度域in
 } VertexNode;
 
 typedef VertexNode AdjList[MAXVEX];  
