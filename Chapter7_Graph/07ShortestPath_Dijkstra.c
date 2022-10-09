@@ -34,7 +34,7 @@ void ShortestPath_Dijkstra(MGraph G, int v0, ShortestPathLength * L, preVex * V)
     for (int i = 0; i < G.numNodes; i++) {
         (*L)[i] = G.arc[v0][i]; //初始化L数组为v0到各顶点的长度，后续逐次更新
         (*V)[i] = -1; //为了与顶点下标区分开来，故设置为-1
-        flag[i] = 0; //各顶点均为加入到路径中
+        flag[i] = 0; //各顶点均未加入到路径中
     }
     //V0加入路径
     flag[v0] = 1;
@@ -48,7 +48,7 @@ void ShortestPath_Dijkstra(MGraph G, int v0, ShortestPathLength * L, preVex * V)
         
         //找到距离V0最短的顶点
         for (int j = 0; j < G.numNodes; j++) {
-            if (!flag[j] && (*L)[j] < min) { /
+            if (!flag[j] && (*L)[j] < min) { 
                 min = G.arc[v0][j];
                 k = j; //储存最近下标值
             }
