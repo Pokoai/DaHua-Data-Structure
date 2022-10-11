@@ -11,6 +11,7 @@
 #include "sort.h"
 
 // 插入排序   main执行时结果错误，但是未找出排序代码有什么问题，后面再看
+// 2022-10-11更新：找到bug，第22行的 for (int j = i-1; L->arr[j] > L->arr[0]; j--) 将j的定义放在for()循环里面，那么跳出循环后的第24行无法访问到j的值
 void InsertSort(SqList * L) 
 {
     int j;
