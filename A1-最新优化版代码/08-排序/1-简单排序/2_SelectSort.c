@@ -29,7 +29,7 @@ typedef struct {
 
 
 static void swap(SqList *L, int i, int j);
-void SelectSort(SqList *L);
+void SelectSort(SqList *L);  // 简单选择排序
 
 
 int main(void)
@@ -64,7 +64,7 @@ int main(void)
     return 0;
 }
 
-// 选择排序
+// 简单选择排序
 void SelectSort(SqList *L)
 {
     int min;  // 存储每次外层循环时准备要安置好的序位号，故每次进入外层循环后赋值为本次循环数i

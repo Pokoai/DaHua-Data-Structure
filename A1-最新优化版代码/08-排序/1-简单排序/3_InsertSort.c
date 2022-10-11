@@ -30,7 +30,7 @@ typedef struct {
 
 
 static void swap(SqList *L, int i, int j);
-void InsertSort(SqList *L);
+void InsertSort(SqList *L);  // 直接插入排序
 
 
 int main(void)
@@ -66,7 +66,7 @@ int main(void)
     return 0;
 }
 
-// 插入排序
+// 直接插入排序
 void InsertSort(SqList *L)
 {
     // i=2: 第1个元素已经默认放在那里，从第2个元素开始按照大小关系往其中插入
