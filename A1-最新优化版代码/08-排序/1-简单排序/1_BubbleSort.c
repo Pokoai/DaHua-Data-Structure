@@ -1,3 +1,11 @@
+/*
+ * 功能: 简单排序-冒泡排序
+ * 作者: Guyue
+ * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
+ * 网站：https://pokeai.cn
+ * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Date: 2022-10-11
+ */
 
 
 #include <stdio.h>
