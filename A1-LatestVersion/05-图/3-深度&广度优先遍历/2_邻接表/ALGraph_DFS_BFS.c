@@ -1,7 +1,7 @@
 /*
  * 功能: 图-邻接表的深度&广度优先遍历
  * 作者: Guyue
- * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
+ * 微信公众号(破壳Ai): https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
  * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-10-01

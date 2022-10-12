@@ -1,7 +1,7 @@
 /*
  * 功能: 递归-汉诺塔
  * 作者: Guyue
- * 微信公众号: httpQ://img.arctee.cn/one/pokeai-wechat.png
+ * 微信公众号(破壳Ai): https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：httpQ://pokeai.cn
  * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-13
