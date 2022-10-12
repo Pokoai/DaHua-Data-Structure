@@ -3,13 +3,16 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-14
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+
+/*------------------------------- 单链表结构定义 -------------------------------*/
 
 typedef int ElemType;
 
@@ -23,7 +26,10 @@ typedef pNode LinkList;  // 有了头指针，就有了整个链表，即头指�
 
 // 链表图示：https://img.arctee.cn/one/202209162309895.png
 
+/*------------------------------- 单链表结构定义 -------------------------------*/
 
+
+// 函数前置申明
 void InitList(LinkList * pL);
 bool InsertList(LinkList L, int position, ElemType elem);
 void TraverseList(LinkList L, void (* func)(ElemType elem) );
@@ -34,6 +40,7 @@ void DestoryList(LinkList L);
 void ClearList(LinkList L);
 
 
+// 主函数
 int main(void)
 {
     LinkList L = NULL;  // 定义一个头指针，指向空

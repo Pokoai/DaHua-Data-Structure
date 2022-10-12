@@ -3,13 +3,16 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-14
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+
+/*------------------- 顺序栈结构定义 ----------------------*/
 
 #define MAXSIZE 100
 
@@ -21,7 +24,10 @@ typedef struct {
     int top;   // 栈顶指针，起初为 -1
 } SqStack, *pSqStack;
 
+/*------------------- 顺序栈结构定义 ----------------------*/ 
 
+
+// 函数前置定义
 void InitStack(pSqStack S);
 bool IsFull(pSqStack S);
 bool PushStack(pSqStack S, ElemType elem);
@@ -32,7 +38,7 @@ void ClearStack(pSqStack S);
 void DestoryStack(pSqStack S);
 
 
-
+// 主函数
 int main(void)
 { 
     SqStack S;

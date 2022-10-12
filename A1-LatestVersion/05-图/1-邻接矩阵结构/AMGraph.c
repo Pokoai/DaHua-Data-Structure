@@ -3,14 +3,17 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-30
  */
 
 #include <stdio.h>
 
-#define MAXVEX 100        // 最大顶点数
+
+/*------------------------- 图-邻接矩阵结构定义 ------------------------*/
+
 #define INFINITY 65535    // 用整数最大值代表无穷大
+#define MAXVEX 100        // 最大顶点数
 
 typedef char VertexType;  // 顶点数据类型
 typedef int EdgeType;     // 边/弧权值数据类型
@@ -22,11 +25,14 @@ typedef struct {
     int numVex, numEdge;            // 顶点数、边数
 } AMGraph;
 
+/*------------------------- 图-邻接矩阵结构定义 ------------------------*/
 
-// 函数声明
+
+// 函数前置声明
 void CreateAMGraph(AMGraph *G);
 
 
+// 主函数
 int main(void)
 {
     AMGraph G;
@@ -40,7 +46,6 @@ int main(void)
 
     return 0;
 }
-
 
 // 创建无向图的邻接矩阵
 void CreateAMGraph(AMGraph *G)

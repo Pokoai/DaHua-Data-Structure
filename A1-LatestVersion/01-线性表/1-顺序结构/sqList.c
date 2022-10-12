@@ -3,7 +3,7 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-14
  */
 
@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+
+/*-------------------- 线性表顺序结构定义 ---------------------*/
 
 #define MAXSIZE 100  // 数组最大容量
 
@@ -23,8 +26,10 @@ typedef struct sqlist {
     int size;  // 线性表存储容量
 } SqList, *pSqList;  // 约定：小写p表示为一个指针变量
 
+/*-------------------- 线性表顺序结构定义 ---------------------*/
 
 
+// 函数前置声明
 void InitList(pSqList L);
 bool AppendList(pSqList L, ElemType elem);
 bool ShowList(pSqList L);
@@ -34,6 +39,7 @@ void ClearList(pSqList L);
 void DestoryList(pSqList L);
 
 
+// 主函数
 int main(void)
 {
     SqList L;  // 定义了一个线性表变量 L

@@ -3,7 +3,7 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-16
  */
 
@@ -12,6 +12,8 @@
 
 #include <stdbool.h>
 
+
+/*------------------------- 链式队列结构定义 ------------------------*/
 
 typedef int QElemType;  // 图的顶点下标作为队列的元素
 
@@ -28,6 +30,9 @@ typedef struct linkqueue {
 } LinkQueue, *pLinkQueue;
 
 // 链式队列示意图：https://img.arctee.cn/one/202209162337604.png
+
+/*------------------------- 链式队列结构定义 ------------------------*/
+
 
 
 extern void InitQueue(pLinkQueue Q);

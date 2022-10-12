@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "linkqueue.h": "c"
+        "linkqueue.h": "c",
+        "stdbool.h": "c"
     }
 }

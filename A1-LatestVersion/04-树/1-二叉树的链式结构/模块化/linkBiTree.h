@@ -1,13 +1,22 @@
+/*
+ * 功能: 二叉树-二叉链表
+ * 作者: Guyue
+ * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
+ * 网站：https://pokeai.cn
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
+ * Date: 2022-09-19
+ */
 
 #ifndef _LINKBITREE_H_
 #define _LINKBITREE_H_
 
 #include <stdbool.h>
 
+#define Nil '#'
+
+/*------------------------- 二叉树链式结构定义 ------------------------*/
 
 typedef char TElemType;
-
-#define Nil '#'
 
 // 二叉链表节点
 typedef struct biTNode {
@@ -19,6 +28,8 @@ typedef struct biTNode {
 // 定义二叉树结构
 // 二叉树只要有一个头指针即可确定，与链表定义相同
 typedef pBiTNode LinkBiTree;
+
+/*------------------------- 二叉树链式结构定义 ------------------------*/
 
 
 
@@ -45,7 +56,6 @@ extern TElemType LeftSibling(LinkBiTree T, TElemType elem);     // 借助 Parent
 extern TElemType RightSibling(LinkBiTree T, TElemType elem);    // 借助 Point()
 
 extern void DestoryBiTree(LinkBiTree T);
-
 
 
 #endif

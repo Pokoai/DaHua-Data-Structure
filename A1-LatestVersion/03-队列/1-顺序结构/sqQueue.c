@@ -3,13 +3,13 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-08-26
  */
 
 
 /*
- * 1. 为什么要用循环队列？ 
+ * 1. 为什么要使用循环队列？ 
  * 如果用**链表**实现队列的话，很简单，只要确定一个头指针和一个尾指针即可。
  * 但这里我们选择用**数组**来实现，数组占用一块连续的内存地址，那么就要考虑内存的问题了，入队：尾指针递增，出队：头指针递增，
  * 可以看出不管是增加元素还是删除元素，指针所指的内存地址都在递增，那么前面的地址就浪费了，内存空间一直在变小。
@@ -34,6 +34,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
+/*-------------------- 循环队列结构定义 ----------------------*/
+
 #define MAXSIZE 10  // 队列长度
 
 typedef int ElemType;
@@ -44,7 +47,12 @@ typedef struct queue {
     int rear;
 } Queue, *pQueue;
 
+// 示意图：https://img.arctee.cn/one/202208271516620.png
 
+/*-------------------- 循环队列结构定义 ----------------------*/
+
+
+// 函数前置声明
 void InitQueue(pQueue pQ);
 bool IsFull(pQueue pQ);
 bool EnQueue(pQueue pQ, ElemType e);
@@ -53,6 +61,7 @@ bool TraverQe(pQueue pQ);
 bool DeQueue(pQueue pQ, ElemType * pE);
 
 
+// 主函数
 int main(void)
 {
     Queue Q;

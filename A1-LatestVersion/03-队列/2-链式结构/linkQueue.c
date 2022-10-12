@@ -3,13 +3,16 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-09-16
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+
+/*------------------------- 链式队列结构定义 ------------------------*/
 
 typedef int ElemType;
 
@@ -27,7 +30,10 @@ typedef struct linkqueue {
 
 // 链式队列示意图：https://img.arctee.cn/one/202209162337604.png
 
+/*------------------------- 链式队列结构定义 ------------------------*/
 
+
+// 函数前置声明
 void InitQueue(pLinkQueue Q);
 bool EnQueue(pLinkQueue Q, ElemType elem);
 void Traverse(pLinkQueue Q);
@@ -37,7 +43,7 @@ void DestoryQueue(pLinkQueue Q);
 void ClearQueue(pLinkQueue Q);
 
 
-
+// 主函数
 int main(void)
 {
     LinkQueue Q;

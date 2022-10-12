@@ -1,3 +1,13 @@
+/*
+ * 功能: 二叉树-顺序结构
+ * 作者: Guyue
+ * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
+ * 网站：https://pokeai.cn
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
+ * Date: 2022-09-28
+ */
+
+
 #ifndef _SQTREE_H_
 #define _SQTREE_H_ 
 

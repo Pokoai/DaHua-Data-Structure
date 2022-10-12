@@ -3,21 +3,18 @@
  * 作者: Guyue
  * 微信公众号: https://img.arctee.cn/one/pokeai-wechat.png
  * 网站：https://pokeai.cn
- * Github: https://github.com/Pokoai/DaHua-Data-Qtructure/tree/main/%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%89%88%E4%BB%A3%E7%A0%81
+ * Github: https://github.com/Pokoai/DaHua-Data-Structure/tree/main/A1-LatestVersion
  * Date: 2022-10-09
  */
 
 #include <stdio.h>
 #include <stdbool.h>
 
+
+/*------------------------- 图-邻接矩阵结构定义 ------------------------*/
+
 #define MAXVEX 100        // 最大顶点数
 #define INFINITY 65535    // 用整数最大值代表无穷大
-
-bool visited[MAXVEX];     // 标记数组
-
-typedef int ShortestPathLength[MAXVEX];  // 存储V0到各顶点的最短距离
-typedef int PreVex[MAXVEX];  // 存储V0到各顶点最短路径的最后一个前驱节点，依据前驱节点可依次反推出最短路径走法
-
 
 typedef char VertexType;  // 顶点数据类型
 typedef int EdgeType;     // 边/弧权值数据类型
@@ -29,16 +26,23 @@ typedef struct {
     int numVex, numEdge;            // 顶点数、边数
 } AMGraph;
 
+/*------------------------- 图-邻接矩阵结构定义 ------------------------*/
 
-// 函数声明
+
+bool visited[MAXVEX];     // 标记数组
+
+typedef int ShortestPathLength[MAXVEX];  // 存储V0到各顶点的最短距离
+typedef int PreVex[MAXVEX];  // 存储V0到各顶点最短路径的最后一个前驱节点，依据前驱节点可依次反推出最短路径走法
+
+
+// 函数前置声明
 void CreateAMGraph(AMGraph *G);
 void DFS_Traverse(AMGraph * G);
 void MiniSpanTree_Prim(AMGraph *G);
 void ShortestPath_Dijkstra(AMGraph *G, int v0, ShortestPathLength * L, PreVex * V);
 
 
-
-
+// 主函数
 int main(void)
 {
     AMGraph G;
