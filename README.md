@@ -1,14 +1,24 @@
-# 《大话数据结构》课本源码改进版
+# 《大话数据结构》课本源码改进
+
+### 文件列表介绍
+
+![image-20230509171622782](C:\Users\pokeu\AppData\Roaming\Typora\typora-user-images\image-20230509171622782.png)
+
+**我以自己的方式重写了课本代码，配有详细的代码注释以及思考过程，可供大家参考。若有问题，可以提交 issue 或者 QQ 私信。 **
+
+
+
+### 代码共建
 
 **书中代码讨论答疑汇总：** https://github.com/Pokoai/Data-Structures-and-Algorithms/issues
 
 我不是实时在群里，只是偶尔看到了整理下，希望大家共建。
 
-### 共建步骤：
+#### 共建步骤：
 
 1. 如果有人提出了某个问题，并且最终在群里得到解决；
 
-2. 你就来这里：[作者代码](https://github.com/Pokoai/Data-Structures-and-Algorithms/tree/main/DaHua/%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99/%E6%BA%90%E4%BB%A3%E7%A0%81/Windows%E7%89%88 ) 找到相关代码，
+2. 你就来这里：[课本代码](https://github.com/Pokoai/DaHua-Data-Structure/tree/main/%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99/%E6%BA%90%E4%BB%A3%E7%A0%81 ) 找到相关代码，
 
     左键点击首行代码标号，然后按住 `shift` 键，再左键点击尾行代码标号，这样就选中了相关代码并且可以提交 issue 了；
 
